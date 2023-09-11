@@ -1,0 +1,28 @@
+@model IEnumerable<WebApp1.Models.Quiz2>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QuizTitle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          <td>
+            @Html.ActionLink(item.QuizTitle, "QuestionQView", "Question", new { Id = item.Quiz2Id })
+          </td>
+                   </tr>
+}
+    </tbody>
+</table>

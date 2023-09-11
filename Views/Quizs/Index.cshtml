@@ -1,0 +1,81 @@
+@model IEnumerable<WebApp1.Models.Quiz>
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+
+@{ ViewData["Title"] = "Index"; }
+@*@if ((await this._identity.GetEmailAdress("User@email.com").Succeeded)*@
+
+
+<h1>Index</h1>
+
+        <p>
+          <a asp-action="Create">Create New</a>
+        </p>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                      </th>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Question)
+                      </th>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Choice1)
+                      </th>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Choice2)
+                      </th>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Choice3)
+                      </th>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Choice4)
+                      </th>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Choice5)
+                      </th>
+                      <th>
+                        @Html.DisplayNameFor(model => model.Answer)
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach (var item in Model)
+                    {
+            <tr>
+              <td>
+                @Html.DisplayFor(modelItem => item.Title)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Question)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Choice1)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Choice2)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Choice3)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Choice4)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Choice5)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+              </td>
+              <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+              </td>
+            </tr>}
+                  </tbody>
+                </table>
+
+

@@ -1,0 +1,35 @@
+@model IEnumerable<WebApp1.Models.Quiz2>
+
+<p>
+  @*<a asp-action="Create">Create New</a>*@
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.QuizTitle)
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>
+          @Html.ActionLink(item.QuizTitle, "QuestionQRestrict", "Question", new { Id = item.Quiz2Id })
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+@*@Html.DisplayFor(modelItem => item.QuizTitle)*@
+
+@*<td>
+      <a asp-action="Edit" asp-route-id="@item.Quiz2Id">Edit</a> |
+      <a asp-action="Details" asp-route-id="@item.Quiz2Id">Details</a> |
+      <a asp-action="Delete" asp-route-id="@item.Quiz2Id">Delete</a>
+  </td>*@
+
+
+

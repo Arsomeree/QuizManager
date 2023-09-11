@@ -1,0 +1,60 @@
+@model WebApp1.Models.Question
+
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Q)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Q)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Choice1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Choice1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Choice2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Choice2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Choice3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Choice3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Choice4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Choice4)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Choice5)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Choice5)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quiz2Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quiz2Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.QuestionId">Edit</a> |*@
+    <a href="javascript: history.go(-1)">Go Back</a>
+</div>

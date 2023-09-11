@@ -1,0 +1,73 @@
+@model IEnumerable<WebApp1.Models.Question>
+
+<p>
+    @*<a asp-action="Create">Create New</a>*@
+  <h1>Manage all Questions</h1>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Q)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Choice1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Choice2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Choice3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Choice4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Choice5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quiz2Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Q)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Choice1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Choice2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Choice3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Choice4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Choice5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quiz2Id)
+            </td>
+            <td>
+              <a asp-action="Edit" asp-route-id="@item.QuestionId">Edit</a> |
+    <a asp-action="Details" asp-route-id="@item.QuestionId">Details</a> |
+    <a asp-action="Delete" asp-route-id="@item.QuestionId">Delete</a>
+              <a  asp-controller="Admin" asp-action="Index" >Back to Quiz list</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

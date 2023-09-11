@@ -1,0 +1,64 @@
+@model WebApp1.Models.Question
+
+<h4>Question</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="QuestionId" />
+            <div class="form-group">
+                <label asp-for="Q" class="control-label"></label>
+                <input asp-for="Q" class="form-control" />
+                <span asp-validation-for="Q" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice1" class="control-label"></label>
+                <input asp-for="Choice1" class="form-control" />
+                <span asp-validation-for="Choice1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice2" class="control-label"></label>
+                <input asp-for="Choice2" class="form-control" />
+                <span asp-validation-for="Choice2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice3" class="control-label"></label>
+                <input asp-for="Choice3" class="form-control" />
+                <span asp-validation-for="Choice3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice4" class="control-label"></label>
+                <input asp-for="Choice4" class="form-control" />
+                <span asp-validation-for="Choice4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Choice5" class="control-label"></label>
+                <input asp-for="Choice5" class="form-control" />
+                <span asp-validation-for="Choice5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Answer" class="control-label"></label>
+                <input asp-for="Answer" class="form-control" />
+                <span asp-validation-for="Answer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quiz2Id" class="control-label"></label>
+                <input asp-for="Quiz2Id" class="form-control" asp-items="Quiz2Id">
+                <span asp-validation-for="Quiz2Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" href="javascript: history.go(-1)" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+  
+  <a href="javascript: history.go(-1)">Go Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
