@@ -1,0 +1,14 @@
+A database operation failed while processing the request.
+SqlException: Invalid object name 'Quiz'.
+There are pending model changes
+Pending model changes are detected in the following:
+
+ApplicationDbContext
+In Visual Studio, use the Package Manager Console to scaffold a new migration for these changes and apply them to the database:
+
+PM> Add-Migration [migration name]
+PM> Update-Database
+Alternatively, you can scaffold a new migration and apply it from a command prompt at your project directory:
+
+> dotnet ef migrations add [migration name]
+> dotnet ef database update
